@@ -4,15 +4,15 @@
 
 class Address {
 public:
-   Address(std::string* _street, std::string* _city, std::string* _state, int _zip);
+   Address(const std::string& _street, const std::string& _city, const std::string& _state, const int& _zip);
 
-   int getZipCode( );
-   std::string getAddress( );
+   virtual int getZipCode( ) const ;
+   virtual std::string getAddress( ) const;
 
 private:
-   std::string* street;
-   std::string* city;
-   std::string* state;
-   int zip;
+   const std::string street;
+   const std::string city;
+   const std::string state;
+   const int zip;
 };
 #endif /* ADDRESS_H_ */

@@ -2,14 +2,14 @@
 #include "Person.h"
 #include "Employee.h"
 
-Employee::Employee(std::string* _name, int _birthMonth, int _birthDay, int _birthYear, Address* _address, double _salary) { 
-   salary = _salary; 
+Employee::Employee(const std::string& _name, const int& _birthMonth, const int& _birthDay, const int& _birthYear,const  Address& _address,const  double& _salary): Person( _name, _birthMonth,  _birthDay,  _birthYear, _address), salary(_salary){ 
+   // salary = _salary; 
 }
 
-std::string Employee::getRole( ) { 
+std::string Employee::getRole( ){ 
    return "Employee";
 }
 
-double getSalary( ) { 
-   return salary;
+double Employee::getSalary( ) const { 
+   return salary; 
 }

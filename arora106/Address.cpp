@@ -1,13 +1,20 @@
 #include <string>
+#include <iostream>
 #include "Address.h"
+using namespace std;
 
-Address::Address(std::string* _street, std::string* _city, std::string* _state, int _zip) {
-   street = _street;
-   city = _city;
-   state = _state;
-   zip = _zip;
+Address::Address(const std::string& _street, const std::string& _city,const  std::string& _state, const int& _zip):street(_street), city(_city), state(_state), zip(_zip){
+   // street = _street;
+   // city = _city;
+   // state = _state; 
+   // zip = _zip;
 }
 
-int Address::getZipCode( ) {
+string Address::getAddress() const{
+   return std::string(street+"\n"+city+"\n"+state+"\n"+std::to_string(zip));
+}
+
+
+int Address::getZipCode( ) const {
    return zip;
 }

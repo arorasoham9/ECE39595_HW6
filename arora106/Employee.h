@@ -5,10 +5,10 @@
 
 class Employee : public Person {
 public:
-   Employee(std::string* _name, int _birthMonth, int _birthDay, int _birthYear, Address* _address, double _salary); 
-   std::string getRole( ); 
-   double getSalary( ); 
+   Employee(const std::string& _name, const int& _birthMonth, const int& _birthDay, const int& _birthYear, const Address& _address,const  double& _salary); 
+   virtual std::string getRole( ); 
+   virtual double getSalary( ) const; 
 private:
-   double salary;
+   const double salary;
 };
 #endif /* EMPLOYEE_H_ */
